@@ -43,11 +43,11 @@ for ladrillo in ladrillos:
 bate_ini = 5
 aceleracion = 0.25
 
-
+# Bucle inicial
 jugando = True
 while jugando:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT: # Se comprueba si se ha cerrado la ventana
             jugando = False
 
     # Compruebo si se ha pulsado alguna tecla, también aquí se le agrega la velocidad de la barra manteniendo apretado el botón
@@ -94,7 +94,7 @@ while jugando:
         pygame.time.delay(2000)  # Al pasar 2 seg la ventana se cierra
         jugando = False
 
-    # Blit el fondo antes de los elementos del juego
+    # Blit, volvemos a pintar los elementos en la ventana
     ventana.blit(Fondo, fondorect)
     ventana.blit(ball, ballrect)
     ventana.blit(bate, baterect)
@@ -102,6 +102,7 @@ while jugando:
         ventana.blit(ladrillo_img, ladrillo)
 
     pygame.display.flip()
+    
     pygame.time.Clock().tick(100)
 
 pygame.quit()
